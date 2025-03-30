@@ -1,3 +1,15 @@
-Get started by customizing your environment (defined in the .idx/dev.nix file) with the tools and IDE extensions you'll need for your project!
+# HackerRank One-Week Preparation Kit Progress Tracker
 
-Learn more at https://developers.google.com/idx/guides/customize-idx-env
+This repository is dedicated to tracking my progress as I work through the HackerRank One-Week Preparation Kit.
+
+## About the Kit
+
+The HackerRank One-Week Preparation Kit is a curated collection of coding challenges designed to help developers prepare for technical interviews. You can find the kit here: [https://www.hackerrank.com/interview/preparation-kits/one-week-preparation-kit/](https://www.hackerrank.com/interview/preparation-kits/one-week-preparation-kit/)
+
+## Project Start Date
+
+This project was initiated on **March 30, 2025**. It will be continuously updated as I complete more challenges and add code solutions to this repository.
+
+## Progress
+
+I will update this section as I complete more of the problems.
