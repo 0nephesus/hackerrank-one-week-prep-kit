@@ -25,8 +25,14 @@ function readLine() {
  */
 function lonelyinteger(a) {
     // Write your code here
+    const counts = new Map();
+    // Count frequencies
     for (const num of a) {
-        if (a.indexOf(num) === a.lastIndexOf(num)) {
+        counts.set(num, (counts.get(num) || 0) + 1);
+    }
+    // Find the number with frequency 1
+    for (const [num, count] of counts) {
+        if (count === 1) {
             return num;
         }
     }
