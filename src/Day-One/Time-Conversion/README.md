@@ -1,23 +1,22 @@
+# Time Conversion
+
 Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.
 
-Note:
+**Note:**
+
 - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
 - 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
 
-Example
+**Example**
 
-- Given '12:01:00AM' return '00:01:00'.
-- Given '12:01:00PM' Return '12:01:00'.
+- Given `12:01:00AM` return `00:01:00`.
+- Given `12:01:00PM` return `12:01:00`.
 
-Function Description
+## Function Description
 
-Complete the timeConversion function. It should return a new string representing the input time in 24 hour format.
+Complete the `timeConversion` function. It should return a new string representing the input time in 24-hour format.
 
-timeConversion has the following parameter(s):
 
-- string s: a time in 12-hour format
-
-Returns
 
 - string: the time in 24-hour format
 
