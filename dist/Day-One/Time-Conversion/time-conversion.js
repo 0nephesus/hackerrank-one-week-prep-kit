@@ -25,18 +25,31 @@ function readLine() {
  */
 function timeConversion(s) {
     // Write your code here
-    if (s.endsWith('AM')) {
-        return s.substring(0, s.length - 2);
+    // Extract parts of the time string
+    const ampm = s.slice(-2); // "AM" or "PM"
+    let hours = parseInt(s.slice(0, 2), 10); // Hour part as a number
+    const minutes = s.slice(3, 5); // Minutes part
+    const seconds = s.slice(6, 8); // Seconds part
+    // --- Apply conversion logic ---
+    if (ampm === 'AM') {
+        if (hours === 12) {
+            // Special case: 12 AM (midnight) is 00 hours in 24-hour format
+            hours = 0;
+        }
+        // For 1 AM to 11 AM, the hour number remains the same.
     }
-    if (s.endsWith('PM')) {
-        let hours;
-        let minutes;
-        let seconds;
-        hours = 12 + Number(s.substring(0, 2));
-        minutes = s.substring(3, 5);
-        seconds = s.substring(6, 8);
-        return (hours + ':' + minutes + ':' + seconds);
+    else { // ampm === 'PM'
+        if (hours !== 12) {
+            // For 1 PM to 11 PM, add 12 to the hour.
+            hours += 12;
+        }
+        // Special case: 12 PM (noon) remains 12 hours in 24-hour format.
     }
+    // --- Format the output ---
+    // Convert hours back to string, padding with leading zero if needed
+    const hoursStr = hours.toString().padStart(2, '0');
+    // Construct the final 24-hour format string
+    return `${hoursStr}:${minutes}:${seconds}`;
 }
 function main() {
     const ws = (0, fs_1.createWriteStream)(process.env['OUTPUT_PATH']);
