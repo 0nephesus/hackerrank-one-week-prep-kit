@@ -12,4 +12,6 @@ This project was initiated on **March 30, 2025**. It will be continuously update
 
 ## Progress
 
-I will update this section as I complete more of the problems.
+All of the Day 1 exercises have been completed.
+
+The Day 1 Mock Test has also been completed.
