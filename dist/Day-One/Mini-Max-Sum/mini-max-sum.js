@@ -23,26 +23,24 @@ function readLine() {
  */
 function miniMaxSum(arr) {
     // Write your code here
-    let min = arr[0];
-    let max = arr[0];
-    arr.forEach(num => {
-        if (num > max) {
-            max = num;
+    let minVal = Infinity; // Start min high
+    let maxVal = -Infinity; // Start max low
+    let totalSum = 0; // Use number type (64-bit float)
+    // Single pass to find min, max, and total sum
+    for (const num of arr) {
+        totalSum += num;
+        if (num < minVal) {
+            minVal = num;
         }
-        else if (num < min) {
-            min = num;
+        if (num > maxVal) {
+            maxVal = num;
         }
-    });
-    let minSum = 0;
-    let maxSum = 0;
-    arr.forEach(num => {
-        if (num !== max) {
-            minSum += num;
-        }
-        if (num !== min) {
-            maxSum += num;
-        }
-    });
+    }
+    // Calculate the minimum sum (sum of all elements except the maximum one)
+    const minSum = totalSum - maxVal;
+    // Calculate the maximum sum (sum of all elements except the minimum one)
+    const maxSum = totalSum - minVal;
+    // Print the results separated by a space
     console.log(minSum + ' ' + maxSum);
 }
 function main() {

@@ -30,29 +30,28 @@ function readLine(): string {
 
 function miniMaxSum(arr: number[]): void {
     // Write your code here
-    let min: number = arr[0];
-    let max: number = arr[0];
-    
-    arr.forEach(num => {
-        if (num > max) {
-            max = num;
-        } else if (num < min) {
-            min = num;
+    let minVal: number = Infinity;     // Start min high
+    let maxVal: number = -Infinity;    // Start max low
+    let totalSum: number = 0;          // Use number type (64-bit float)
+
+    // Single pass to find min, max, and total sum
+    for (const num of arr) {
+        totalSum += num;
+        if (num < minVal) {
+            minVal = num;
         }
-    });
-    
-    let minSum: number = 0;
-    let maxSum: number = 0;
-    
-    arr.forEach(num => {
-       if (num !== max) {
-        minSum += num
-       }
-       if (num !== min) {
-        maxSum += num
-       }
-    });
-    
+        if (num > maxVal) {
+            maxVal = num;
+        }
+    }
+
+    // Calculate the minimum sum (sum of all elements except the maximum one)
+    const minSum: number = totalSum - maxVal;
+
+    // Calculate the maximum sum (sum of all elements except the minimum one)
+    const maxSum: number = totalSum - minVal;
+
+    // Print the results separated by a space
     console.log(minSum + ' ' + maxSum);
 }
 
