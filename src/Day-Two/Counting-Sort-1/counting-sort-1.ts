@@ -34,7 +34,7 @@ function countingSort(arr: number[]): number[] {
     // Write your code here
     const frequencyArr: number[] = [];
     
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < 100; i++) {
         frequencyArr.push(0);
     }
     

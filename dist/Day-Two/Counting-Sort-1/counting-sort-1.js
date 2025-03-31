@@ -26,7 +26,7 @@ function readLine() {
 function countingSort(arr) {
     // Write your code here
     const frequencyArr = [];
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < 100; i++) {
         frequencyArr.push(0);
     }
     for (const num of arr) {
