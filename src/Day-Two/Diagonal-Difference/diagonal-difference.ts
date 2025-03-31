@@ -32,7 +32,29 @@ function readLine(): string {
 
 function diagonalDifference(arr: number[][]): number {
     // Write your code here
+    // Get the size of the square matrix (number of rows or columns)
+    const n: number = arr.length;
 
+    // Initialize sums for both diagonals
+    let primaryDiagonalSum: number = 0;
+    let secondaryDiagonalSum: number = 0;
+
+    // Iterate through the rows of the matrix
+    for (let i = 0; i < n; i++) {
+        // Add the element from the primary diagonal (top-left to bottom-right)
+        // Elements are at index [i][i]
+        primaryDiagonalSum += arr[i][i];
+
+        // Add the element from the secondary diagonal (top-right to bottom-left)
+        // Elements are at index [i][n - 1 - i]
+        secondaryDiagonalSum += arr[i][n - 1 - i];
+    }
+
+    // Calculate the absolute difference between the two sums
+    const absoluteDifference: number = Math.abs(primaryDiagonalSum - secondaryDiagonalSum);
+
+    // Return the result
+    return absoluteDifference;
 }
 
 function main() {
