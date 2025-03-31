@@ -24,14 +24,20 @@ function readLine() {
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 function countingSort(arr) {
-    // Write your code here
-    const frequencyArr = [];
-    for (let i = 0; i < 100; i++) {
-        frequencyArr.push(0);
-    }
+    // The frequency array needs indices 0 through 99.
+    // So, its size must be 100. Initialize all counts to 0.
+    // A common constraint for this problem is that numbers are in the range [0, 99]
+    const frequencyArr = new Array(100).fill(0);
+    // Iterate through the input array
     for (const num of arr) {
-        frequencyArr[num] = frequencyArr[num] + 1;
+        // Increment the count for the specific number found.
+        // We assume 'num' will be within the valid index range [0, 99]
+        // based on problem constraints.
+        if (num >= 0 && num < 100) { // Optional: Add a check for safety
+            frequencyArr[num]++;
+        }
     }
+    // Return the frequency array itself
     return frequencyArr;
 }
 function main() {
